@@ -9,6 +9,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import com.rujirakongsomran.jc_previewui.ui.theme.JC_PreviewUITheme
 
 class MainActivity : ComponentActivity() {
@@ -32,5 +34,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TextPreview() {
     Text(text = "Ari jura")
+}
+
+@Composable
+fun UserProfile(user: User) {
+    Text(text = user.name)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UserProfilePreview(
+    @PreviewParameter(UserPreviewParameterProvider::class) user: User
+) {
+    UserProfile(user)
 }
 
